@@ -1,0 +1,214 @@
+/* Global sheet: every rule is scoped to this block's surface. Roles are set by
+   host.luau; the scene is painted with gradients because Balatro ships no
+   background art -- only the props are cut from the player's install. */
+
+.sf-main[data-surface='plugin.balatro.balatro'] {
+	padding: 0 !important;
+	gap: 0 !important;
+	display: flex !important;
+	flex-direction: column !important;
+	min-height: 0 !important;
+}
+
+.sf-main[data-surface='plugin.balatro.balatro'] > .sf-col {
+	height: 100% !important;
+	min-height: 0 !important;
+	gap: 0 !important;
+}
+
+/* ------------------------------------------------------------------ stage -- */
+
+.sf-main[data-surface='plugin.balatro.balatro'] [data-role^='stage-'] {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	overflow: hidden;
+	border-radius: 0.4em;
+	min-height: 9em;
+	width: 100%;
+}
+
+.sf-main[data-surface='plugin.balatro.balatro'] [data-role='stage-table-day'] {
+	background:
+		linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0.12) 62%, rgba(0, 0, 0, 0.34)),
+		radial-gradient(130% 90% at 50% 104%, #3c8f5c 0%, #1e5336 46%, #123524 78%, #0b2418 100%);
+}
+
+.sf-main[data-surface='plugin.balatro.balatro'] [data-role='stage-table-night'] {
+	background:
+		linear-gradient(180deg, rgba(120, 90, 200, 0.10), rgba(0, 0, 0, 0.30) 62%, rgba(0, 0, 0, 0.55)),
+		radial-gradient(130% 90% at 50% 104%, #1f5c48 0%, #14382f 46%, #0d2320 78%, #071614 100%);
+}
+
+.sf-main[data-surface='plugin.balatro.balatro'] [data-role='stage-shop-day'] {
+	background:
+		radial-gradient(80% 60% at 50% 0%, rgba(255, 214, 140, 0.20), rgba(0, 0, 0, 0) 70%),
+		linear-gradient(180deg, #33283c 0%, #241b2c 55%, #3a2a3a 100%);
+}
+
+.sf-main[data-surface='plugin.balatro.balatro'] [data-role='stage-shop-night'] {
+	background:
+		radial-gradient(80% 60% at 50% 0%, rgba(255, 196, 110, 0.14), rgba(0, 0, 0, 0) 70%),
+		linear-gradient(180deg, #171226 0%, #0d0a18 55%, #1d1424 100%);
+}
+
+.sf-main[data-surface='plugin.balatro.balatro'] [data-role='stage-blind-day'] {
+	background:
+		radial-gradient(120% 80% at 50% 100%, rgba(255, 120, 120, 0.22), rgba(0, 0, 0, 0) 70%),
+		linear-gradient(180deg, #3a1f2c 0%, #24121c 60%, #3d1a26 100%);
+}
+
+.sf-main[data-surface='plugin.balatro.balatro'] [data-role='stage-blind-night'] {
+	background:
+		radial-gradient(120% 80% at 50% 100%, rgba(220, 70, 80, 0.18), rgba(0, 0, 0, 0) 70%),
+		linear-gradient(180deg, #1a0d14 0%, #0d0509 60%, #200b12 100%);
+}
+
+.sf-main[data-surface='plugin.balatro.balatro'] [data-role='stage-none-day'],
+.sf-main[data-surface='plugin.balatro.balatro'] [data-role='stage-none-night'] {
+	background: none;
+}
+
+/* ------------------------------------------------------------------- props -- */
+
+.sf-main[data-surface='plugin.balatro.balatro'] [data-role^='prop-'] {
+	position: absolute;
+	pointer-events: none;
+	z-index: 1;
+	image-rendering: pixelated;
+	opacity: 0.92;
+}
+
+.sf-main[data-surface='plugin.balatro.balatro'] [data-role='prop-card-a'] {
+	left: 6%;
+	bottom: 9%;
+	width: 13%;
+	transform: rotate(-9deg);
+}
+
+.sf-main[data-surface='plugin.balatro.balatro'] [data-role='prop-card-b'] {
+	left: 21%;
+	bottom: 14%;
+	width: 13%;
+	transform: rotate(7deg);
+}
+
+.sf-main[data-surface='plugin.balatro.balatro'] [data-role='prop-chip'] {
+	right: 9%;
+	bottom: 11%;
+	width: 5%;
+	z-index: 3;
+}
+
+.sf-main[data-surface='plugin.balatro.balatro'] [data-role='prop-sign'] {
+	left: 50%;
+	top: 4%;
+	width: 34%;
+	transform: translateX(-50%);
+	z-index: 3;
+	opacity: 1;
+}
+
+.sf-main[data-surface='plugin.balatro.balatro'] [data-role='prop-pack-a'] {
+	left: 4%;
+	bottom: 10%;
+	width: 10%;
+	z-index: 3;
+}
+
+.sf-main[data-surface='plugin.balatro.balatro'] [data-role='prop-pack-b'] {
+	right: 5%;
+	bottom: 10%;
+	width: 10%;
+	z-index: 3;
+}
+
+.sf-main[data-surface='plugin.balatro.balatro'] [data-role='prop-blind'] {
+	left: 50%;
+	top: 8%;
+	width: 16%;
+	transform: translateX(-50%);
+	z-index: 3;
+	opacity: 1;
+}
+
+/* ----------------------------------------------------------------- jokers -- */
+
+.sf-main[data-surface='plugin.balatro.balatro'] [data-role='mon'] {
+	position: relative;
+	z-index: 2;
+	align-items: flex-end;
+	width: 100%;
+	min-height: 0;
+}
+
+.sf-main[data-surface='plugin.balatro.balatro'] [data-role='mon'] .sf-image {
+	height: 5.5em;
+	width: auto;
+	image-rendering: pixelated;
+	cursor: pointer;
+	pointer-events: auto;
+}
+
+.sf-main[data-surface='plugin.balatro.balatro'] [data-role='sprite-flip'] {
+	transform: scaleX(-1);
+}
+
+.sf-main[data-surface='plugin.balatro.balatro'] [data-role='edition-foil'] .sf-image {
+	filter: drop-shadow(0 0 0.35em rgba(240, 198, 116, 0.9)) saturate(1.15);
+}
+
+.sf-main[data-surface='plugin.balatro.balatro'] [data-role='edition-holo'] .sf-image {
+	filter: hue-rotate(190deg) saturate(1.5) drop-shadow(0 0 0.3em rgba(120, 200, 255, 0.8));
+}
+
+.sf-main[data-surface='plugin.balatro.balatro'] [data-role='edition-poly'] .sf-image {
+	filter: hue-rotate(285deg) saturate(1.7) drop-shadow(0 0 0.35em rgba(190, 120, 255, 0.9));
+}
+
+.sf-main[data-surface='plugin.balatro.balatro'] [data-role='pet'] {
+	align-self: center;
+	animation: balatro-pet 2600ms ease-out forwards;
+}
+
+@keyframes balatro-pet {
+	from {
+		opacity: 0;
+		transform: translateY(0.7em) scale(0.75);
+	}
+	30% {
+		opacity: 1;
+		transform: translateY(-0.1em) scale(1);
+	}
+	to {
+		opacity: 0;
+		transform: translateY(-1.8em) scale(1);
+	}
+}
+
+.sf-still [data-role='pet'] {
+	animation: none;
+	opacity: 1;
+}
+
+/* -------------------------------------------------------------------- dock -- */
+
+.sf-dock[data-surface='plugin.balatro.balatro'] {
+	position: relative;
+	z-index: 11;
+}
+
+.sf-dock[data-surface='plugin.balatro.balatro'] [data-role='btns'] {
+	gap: 0.35em;
+}
+
+.sf-dock[data-surface='plugin.balatro.balatro'] [data-role='btn'] {
+	cursor: pointer;
+	padding: 0 0.15em;
+	opacity: 0.85;
+}
+
+.sf-dock[data-surface='plugin.balatro.balatro'] [data-role='btn']:hover {
+	opacity: 1;
+}

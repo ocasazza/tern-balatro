@@ -1,0 +1,13 @@
+schema = 1
+id = "balatro"
+name = "Balatro"
+version = "0.1.0"
+description = "Jokers wander a Balatro card table, shop or blind, cut from your own Balatro install."
+icon = "sparkle"
+host = "host.luau"
+styles = ["balatro.css"]
+
+[[blocks]]
+id = "balatro"
+title = "Balatro"
+icon = "sparkle"
